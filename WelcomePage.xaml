@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://microsoft.com"
+    xmlns:x="http://microsoft.com"
+    x:Class="MyProject.WelcomePage"
+    Title="CS Student Management System"
+    >
+    <Grid BackgroundColor="#1A237E">
+        <Grid.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Up" Swiped="OnSwipedToLogin" />
+        </Grid.GestureRecognizers>
+        <Image Aspect="AspectFit" Source="college_of_s.png" />
+        <VerticalStackLayout
+            Margin="40,365,45,0"
+            Spacing="8"
+            VerticalOptions="Start"
+            >
+            <Label
+                FontAttributes="Bold"
+                FontSize="24"
+                Margin="5,0,0,4"
+                Text="Welcome, Scholar!"
+                TextColor="White"
+                />
+            <Label
+                FontSize="14"
+                LineHeight="1.2"
+                Margin="5,0,20,0"
+                Text="You have reached the digital gateway of the Bicol University College of Science. In our pursuit of being a University for Humanity, this system connects you to your academic universe."
+                TextColor="White"
+                />
+        </VerticalStackLayout>
+        <Label
+            FontAttributes="SemiBold"
+            FontSize="14"
+            HorizontalOptions="Center"
+            Margin="0,0,0,60"
+            Text="Swipe up to log in"
+            TextColor="#FFC107"
+            VerticalOptions="End"
+            />
+    </Grid>
+</ContentPage>

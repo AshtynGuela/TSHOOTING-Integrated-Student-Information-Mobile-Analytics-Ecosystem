@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://microsoft.com"
+    xmlns:x="http://microsoft.com"
+    x:Class="MyProject.StudentLogin"
+    Title="CS Student Management System"
+    >
+    <Grid BackgroundColor="White">
+        <Image Aspect="AspectFit" Source="StudentLogin.png" />
+        <Entry
+            FontSize="14"
+            HeightRequest="45"
+            HorizontalOptions="Start"
+            Margin="90,300,0,0"
+            Placeholder="Email or Username...."
+            TextColor="White"
+            VerticalOptions="Start"
+            WidthRequest="200"
+            />
+        <Entry
+            FontSize="14"
+            HorizontalOptions="Start"
+            Margin="90,400,0,0"
+            Placeholder="Enter Password"
+            TextColor="White"
+            VerticalOptions="Start"
+            WidthRequest="200"
+            />
+        <Button
+            BackgroundColor="#FFD042"
+            CornerRadius="10"
+            FontAttributes="Bold"
+            FontSize="16"
+            HeightRequest="45"
+            HorizontalOptions="Start"
+            Margin="90,470,0,0"
+            Text="Log In"
+            TextColor="#1A237E"
+            VerticalOptions="Start"
+            WidthRequest="200"
+            />
+        <Label
+            FontSize="14"
+            HorizontalOptions="Center"
+            Margin="0,0,0,60"
+            Text="Ask for Support"
+            TextColor="White"
+            TextDecorations="Underline"
+            VerticalOptions="End"
+            >
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnSupportTapped" />
+            </Label.GestureRecognizers>
+        </Label>
+    </Grid>
+</ContentPage>

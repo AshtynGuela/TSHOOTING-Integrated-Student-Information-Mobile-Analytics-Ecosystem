@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://microsoft.com"
+    xmlns:x="http://microsoft.com"
+    x:Class="MyProject.DashboardPage"
+    Title="Student Dashboard"
+    >
+    <Grid>
+        <Image Aspect="AspectFill" Source="BG .png" />
+        <Grid RowDefinitions="Auto, *">
+            <Grid
+                BackgroundColor="#CC1A237E"
+                ColumnDefinitions="Auto, *"
+                Padding="16,12"
+                >
+                <Image
+                    Aspect="AspectFit"
+                    HeightRequest="36"
+                    Source="logo.png"
+                    WidthRequest="36"
+                    />
+                <VerticalStackLayout
+                    Grid.Column="1"
+                    Margin="12,0,0,0"
+                    VerticalOptions="Center"
+                    >
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="16"
+                        Text="BU College of Science"
+                        TextColor="White"
+                        />
+                    <Label
+                        FontSize="11"
+                        Text="Student Information System"
+                        TextColor="#FFC107"
+                        />
+                </VerticalStackLayout>
+            </Grid>
+            <ScrollView Grid.Row="1">
+                <VerticalStackLayout Padding="18,16" Spacing="16">
+                    <Frame
+                        BackgroundColor="White"
+                        CornerRadius="15"
+                        HasShadow="True"
+                        Padding="16"
+                        >
+                        <HorizontalStackLayout Spacing="14" VerticalOptions="Center">
+                            <Frame
+                                BorderColor="#1A237E"
+                                CornerRadius="35"
+                                HasShadow="False"
+                                HeightRequest="70"
+                                IsClippedToBounds="True"
+                                WidthRequest="70"
+                                >
+                                <Image
+                                    Aspect="AspectFill"
+                                    HeightRequest="70"
+                                    Source="Student.png"
+                                    WidthRequest="70"
+                                    />
+                            </Frame>
+                            <VerticalStackLayout Spacing="3" VerticalOptions="Center">
+                                <Label
+                                    FontSize="12"
+                                    Text="Welcome back, Scholar!"
+                                    TextColor="Gray"
+                                    />
+                                <Label
+                                    x:Name="WelcomeNameLabel"
+                                    FontAttributes="Bold"
+                                    FontSize="18"
+                                    Text="Juan Dela Cruz"
+                                    TextColor="#1A237E"
+                                    />
+                                <Label
+                                    x:Name="StudentSummaryLabel"
+                                    FontSize="12"
+                                    Text="2024-00123 • BS Computer Science"
+                                    TextColor="#455A64"
+                                    />
+                                <Frame
+                                    BackgroundColor="#E8F5E9"
+                                    CornerRadius="6"
+                                    HasShadow="False"
+                                    HorizontalOptions="Start"
+                                    Margin="0,2,0,0"
+                                    Padding="8,2"
+                                    >
+                                    <Label
+                                        x:Name="StatusBadgeLabel"
+                                        FontAttributes="Bold"
+                                        FontSize="11"
+                                        Text="Enrolled • 3rd Year - Block A"
+                                        TextColor="#2E7D32"
+                                        />
+                                </Frame>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </Frame>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        Margin="4,4,0,-6"
+                        Text="Quick Navigation"
+                        TextColor="White"
+                        />
+                    <Frame
+                        BackgroundColor="White"
+                        CornerRadius="14"
+                        HasShadow="True"
+                        Padding="16"
+                        >
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnStudentDirectoryClicked" />
+                        </Frame.GestureRecognizers>
+                        <Grid ColumnDefinitions="Auto, *, Auto" ColumnSpacing="14">
+                            <Frame
+                                BackgroundColor="#E8EAF6"
+                                CornerRadius="12"
+                                HasShadow="False"
+                                HeightRequest="50"
+                                WidthRequest="50"
+                                >
+                                <Label
+                                    FontSize="24"
+                                    HorizontalOptions="Center"
+                                    Text="👥"
+                                    VerticalOptions="Center"
+                                    />
+                            </Frame>
+                            <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text="Student Directory"
+                                    TextColor="#1A237E"
+                                    />
+                                <Label
+                                    FontSize="12"
+                                    Text="Search and view College of Science students"
+                                    TextColor="#607D8B"
+                                    />
+                            </VerticalStackLayout>
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Grid.Column="2"
+                                Text="›"
+                                TextColor="#1A237E"
+                                VerticalOptions="Center"
+                                />
+                        </Grid>
+                    </Frame>
+                    <Frame
+                        BackgroundColor="White"
+                        CornerRadius="14"
+                        HasShadow="True"
+                        Padding="16"
+                        >
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnMyProfileClicked" />
+                        </Frame.GestureRecognizers>
+                        <Grid ColumnDefinitions="Auto, *, Auto" ColumnSpacing="14">
+                            <Frame
+                                BackgroundColor="#FFF8E1"
+                                CornerRadius="12"
+                                HasShadow="False"
+                                HeightRequest="50"
+                                WidthRequest="50"
+                                >
+                                <Label
+                                    FontSize="24"
+                                    HorizontalOptions="Center"
+                                    Text="👤"
+                                    VerticalOptions="Center"
+                                    />
+                            </Frame>
+                            <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text="My Profile"
+                                    TextColor="#1A237E"
+                                    />
+                                <Label
+                                    FontSize="12"
+                                    Text="View and update your personal details"
+                                    TextColor="#607D8B"
+                                    />
+                            </VerticalStackLayout>
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Grid.Column="2"
+                                Text="›"
+                                TextColor="#1A237E"
+                                VerticalOptions="Center"
+                                />
+                        </Grid>
+                    </Frame>
+                    <Button
+                        BackgroundColor="Transparent"
+                        Clicked="OnLogoutClicked"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        HorizontalOptions="End"
+                        Margin="0,12,20,24"
+                        Text="← Log Out"
+                        TextColor="White"
+                        VerticalOptions="End"
+                        />
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://microsoft.com"
+    xmlns:x="http://microsoft.com"
+    x:Class="MyProject.StudentDirectoryPage"
+    Title="Student Directory"
+    >
+    <Grid>
+        <Image Aspect="AspectFill" Source="BG .png" />
+        <Grid RowDefinitions="Auto, *">
+            <VerticalStackLayout
+                BackgroundColor="#CC1A237E"
+                Padding="15"
+                Spacing="10"
+                >
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="22"
+                    Text="Student Directory"
+                    TextColor="White"
+                    />
+                <Frame
+                    BackgroundColor="White"
+                    CornerRadius="10"
+                    HasShadow="False"
+                    >
+                    <SearchBar
+                        x:Name="StudentSearchBar"
+                        Placeholder="Search by Student Name or ID..."
+                        PlaceholderColor="Gray"
+                        TextChanged="OnSearchTextChanged"
+                        TextColor="Black"
+                        />
+                </Frame>
+            </VerticalStackLayout>
+            <CollectionView
+                x:Name="StudentsCollectionView"
+                Grid.Row="1"
+                Margin="15"
+                SelectionChanged="OnStudentSelected"
+                SelectionMode="Single"
+                >
+                <CollectionView.EmptyView>
+                    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="20">
+                        <Label Text="No matching student records found." TextColor="White" FontSize="16" HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+                </CollectionView.EmptyView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="White" CornerRadius="12" Padding="15" Margin="0,0,0,12" HasShadow="True" BorderColor="#E0E0E0">
+                            <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto, Auto" RowSpacing="4">
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding FullName}" TextColor="#1A237E" FontSize="17" FontAttributes="Bold" />
+                                <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#E8F5E9" Padding="8,2" CornerRadius="6" HasShadow="False">
+                                    <Label Text="{Binding EnrollmentStatus}" TextColor="#2E7D32" FontSize="11" FontAttributes="Bold" />
+                                </Frame>
+                                <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding StudentId, StringFormat='ID: {0}'}" TextColor="#455A64" FontSize="13" FontAttributes="Bold" />
+                                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding AcademicSummary}" TextColor="#607D8B" FontSize="13" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </Grid>
+</ContentPage>
