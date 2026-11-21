@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="StudentInformationSystemMobile.Views.StudentDirectoryPage"
+    Title="Student Directory">
+
+    <VerticalStackLayout Spacing="0">
+
+        <!-- Header -->
+        <VerticalStackLayout
+            BackgroundColor="#CC1A237E"
+            Padding="15"
+            Spacing="10">
+
+            <Label
+                Text="Student Directory"
+                FontSize="22"
+                FontAttributes="Bold"
+                TextColor="White" />
+
+            <Frame
+                BackgroundColor="White"
+                CornerRadius="10"
+                Padding="0"
+                HasShadow="False">
+
+                <SearchBar
+                    x:Name="StudentSearchBar"
+                    Placeholder="Search by Student Name or ID..."
+                    PlaceholderColor="Gray"
+                    TextChanged="OnSearchTextChanged"
+                    TextColor="Black" />
+            </Frame>
+
+        </VerticalStackLayout>
+
+        <!-- Student List -->
+        <CollectionView
+            x:Name="StudentsCollectionView"
+            Margin="15"
+            SelectionChanged="OnStudentSelected"
+            SelectionMode="Single">
+
+            <CollectionView.EmptyView>
+                <VerticalStackLayout
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Padding="20">
+
+                    <Label
+                        Text="No matching student records found."
+                        TextColor="Gray"
+                        FontSize="16"
+                        HorizontalOptions="Center" />
+
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+
+                    <Border
+                        Padding="15"
+                        Margin="0,0,0,12"
+                        Stroke="#E0E0E0"
+                        StrokeThickness="1">
+
+                        <Grid
+                            ColumnDefinitions="*, Auto"
+                            RowDefinitions="Auto, Auto, Auto"
+                            RowSpacing="4">
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Text="{Binding FullName}"
+                                TextColor="#1A237E"
+                                FontSize="17"
+                                FontAttributes="Bold" />
+
+                            <Frame
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                BackgroundColor="#E8F5E9"
+                                Padding="8,2"
+                                CornerRadius="6"
+                                HasShadow="False">
+
+                                <Label
+                                    Text="{Binding EnrollmentStatus}"
+                                    TextColor="#2E7D32"
+                                    FontSize="11"
+                                    FontAttributes="Bold" />
+                            </Frame>
+
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                Text="{Binding StudentId, StringFormat='ID: {0}'}"
+                                TextColor="#455A64"
+                                FontSize="13"
+                                FontAttributes="Bold" />
+
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                Text="{Binding AcademicSummary}"
+                                TextColor="#607D8B"
+                                FontSize="13" />
+
+                        </Grid>
+                    </Border>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </VerticalStackLayout>
+
+</ContentPage>
