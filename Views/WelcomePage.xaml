@@ -10,7 +10,7 @@
         <Grid.GestureRecognizers>
             <SwipeGestureRecognizer
                 Direction="Up"
-                Swiped="OnSwipedToLogin" />
+                Swiped="OnLoginRequested" />
         </Grid.GestureRecognizers>
 
         <Image
@@ -38,12 +38,14 @@
 
         </VerticalStackLayout>
 
-        <Label
+        <Button
+            BackgroundColor="Transparent"
+            Clicked="OnLoginRequested"
             FontAttributes="Bold"
             FontSize="14"
             HorizontalOptions="Center"
-            Margin="0,0,0,60"
-            Text="Swipe up to log in"
+            Margin="0,0,0,44"
+            Text="Log In"
             TextColor="#FFC107"
             VerticalOptions="End" />
 

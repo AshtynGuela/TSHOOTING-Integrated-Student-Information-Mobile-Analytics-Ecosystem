@@ -8,7 +8,7 @@ namespace StudentInformationSystemMobile.Views
             InitializeComponent();
         }
 
-        private async void OnSwipedToLogin(object sender, SwipedEventArgs e)
+        private async void OnLoginRequested(object? sender, EventArgs e)
         {
             await Shell.Current.GoToAsync(nameof(StudentLogin));
         }

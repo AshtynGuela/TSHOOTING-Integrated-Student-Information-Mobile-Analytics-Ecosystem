@@ -1,70 +1,62 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="StudentInformationSystemMobile.Views.StudentLogin"
+    SafeAreaEdges="All"
     Title="CS Student Management System">
 
-    <Grid BackgroundColor="White">
+    <Grid BackgroundColor="#1A237E" RowDefinitions="2*,3*">
 
         <Image
+            Grid.RowSpan="2"
             Aspect="AspectFit"
             Source="studentlogin.png" />
 
-        <Entry
-            x:Name="UsernameEntry"
-            FontSize="14"
-            HeightRequest="45"
-            HorizontalOptions="Start"
-            Margin="90,300,0,0"
-            Placeholder="Email or Username..."
-            TextColor="White"
-            VerticalOptions="Start"
-            WidthRequest="200"
-            />
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="24,12,24,24" MaximumWidthRequest="360" Spacing="16">
 
-        <Entry
-            x:Name="PasswordEntry"
-            FontSize="14"
-            HeightRequest="45"
-            HorizontalOptions="Start"
-            Margin="90,400,0,0"
-            Placeholder="Enter Password"
-            IsPassword="True"
-            TextColor="White"
-            VerticalOptions="Start"
-            WidthRequest="200"
-            />
+                <Entry
+                    x:Name="UsernameEntry"
+                    FontSize="14"
+                    HeightRequest="45"
+                    Placeholder="Email or Username..."
+                    PlaceholderColor="#E0E2EE"
+                    TextColor="White" />
 
-        <Button
-            x:Name="LoginButton"
-            BackgroundColor="#FFD042"
-            CornerRadius="10"
-            FontAttributes="Bold"
-            FontSize="16"
-            HeightRequest="45"
-            HorizontalOptions="Start"
-            Margin="90,470,0,0"
-            Text="Log In"
-            TextColor="#1A237E"
-            VerticalOptions="Start"
-            WidthRequest="200"
-            Clicked="OnLoginClicked" />
+                <Entry
+                    x:Name="PasswordEntry"
+                    FontSize="14"
+                    HeightRequest="45"
+                    IsPassword="True"
+                    Placeholder="Enter Password"
+                    PlaceholderColor="#E0E2EE"
+                    TextColor="White" />
 
-        <Label
-            FontSize="14"
-            HorizontalOptions="Center"
-            Margin="0,0,0,60"
-            Text="Ask for Support"
-            TextColor="White"
-            TextDecorations="Underline"
-            VerticalOptions="End">
+                <Button
+                    x:Name="LoginButton"
+                    BackgroundColor="#FFD042"
+                    Clicked="OnLoginClicked"
+                    CornerRadius="10"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    HeightRequest="45"
+                    Text="Log In"
+                    TextColor="#1A237E" />
 
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnSupportTapped" />
-            </Label.GestureRecognizers>
+                <Label
+                    FontSize="14"
+                    HorizontalOptions="Center"
+                    Text="Ask for Support"
+                    TextColor="White"
+                    TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSupportTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
 
-        </Label>
+            </VerticalStackLayout>
+        </ScrollView>
 
     </Grid>
 </ContentPage>
